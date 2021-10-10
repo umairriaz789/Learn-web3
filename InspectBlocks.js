@@ -31,11 +31,6 @@ const getTenBlocks=async()=>{
     }
 
 }
-/*
-
-const hash = '';
-web3.eth.getTransactionFromBlock(hash, 2).then(console.log);
-*/
 //getBlockNumber();
 //getBlocks();
 getTenBlocks();
