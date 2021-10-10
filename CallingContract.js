@@ -78,5 +78,5 @@ const Getage=async()=>{
     }
 }
 CallingContract();
-//Getage();
+Getage();
 
