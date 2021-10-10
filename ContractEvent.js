@@ -2,10 +2,6 @@ const Web3 = require('web3');
 const Tx = require('ethereumjs-tx').Transaction;
 const rpcURL ="https://ropsten.infura.io/v3/ea5eca6e1a3f4128b92b5b0fc5441ed8";
 const web3 = new Web3(rpcURL);
-const account="0xd89C1DbebB244061e1199050886cB4A43E327B93";
-const private_key="bc7d058358f9161a9e2cfba2eaca3957ec9ba5371a7ba152eb1ff12a07c6786c";
-//const account_Buffer=Buffer.from(account,'hex');
-const private_key_Buffer=Buffer.from(private_key,'hex');
 const ABI=[
 	{
 		"inputs": [],
@@ -40,3 +36,17 @@ const ABI=[
 		"type": "function"
 	}
 ];
+const contractAddress="0xd4f641e80a4050f835523f96bbb98557af7d2223";
+const contract = new web3.eth.Contract(ABI, contractAddress);
+const getEvent=async()=>{
+    try{
+        const events=await contract.getPastEvents('AllEvents',{'fromBlock':0,'toBlock': 'latest'});
+        console.log('EventsCount:',events);
+
+    }catch(e){
+        console.log('Error:',e);
+
+    }
+
+}
+getEvent();
