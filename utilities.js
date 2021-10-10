@@ -1,4 +1,4 @@
-const _ =require('underscore');
+const _ = require('Underscore');
 const Web3 = require('web3');
 const rpcURL ="https://ropsten.infura.io/v3/ea5eca6e1a3f4128b92b5b0fc5441ed8";
 const web3 = new Web3(rpcURL);
@@ -27,6 +27,16 @@ const RandomNumber=(bytes)=>{
         
     }
 }
+const underscorelib=()=>{
+    try {
+        console.log('contains?',_.contains([1,2,3], 4));
+    } catch (error) {
+        console.log('Error:',error);
+        
+    }
+}
+
 //getaverageGasPrice();
 //Hash('UET');
-RandomNumber(2);
+//RandomNumber(2);
+underscorelib();
