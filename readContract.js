@@ -35,4 +35,4 @@ contract.methods.retrieve().call((err,result)=>{
     if(!err){
         console.log('result from contract', result);
     }
-})
+ })
